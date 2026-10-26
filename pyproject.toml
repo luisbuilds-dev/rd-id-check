@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rd-id-check"
+version = "0.1.0"
+description = "Validate and format Dominican cédulas and RNCs offline, including the official exceptions."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Luis Cabrera" }]
+requires-python = ">=3.10"
+dependencies = ["python-stdnum>=2.0"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Environment :: Console",
+]
+
+[project.urls]
+Homepage = "https://luisbuilds.com/h/rd-id-check"
+Source = "https://github.com/luisbuilds-dev/rd-id-check"
+
+[project.scripts]
+rd-id-check = "rd_id_check.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rd_id_check"]
